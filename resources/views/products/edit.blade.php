@@ -39,64 +39,72 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">Pièces</label>
-                        <div class="col-md-6">
-                          <input type="text" class="form-control @error('bedrooms') is-invalid @enderror" id="bedrooms" name="bedrooms" value="{{ $product->bedrooms }} ">
-                            @if ($errors->has('bedrooms'))
-                                <span class="text-danger">{{ $errors->first('bedrooms') }}</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
                         <label for="surface" class="col-md-4 col-form-label text-md-end text-start">Surface</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('surface') is-invalid @enderror" id="surface" name="surface" value="{{ $product->surface }} ">
+                          <input type="text" class="form-control @error('surface') is-invalid @enderror" id="surface" name="surface" value="{{ $product->surface }}">
                             @if ($errors->has('surface'))
                                 <span class="text-danger">{{ $errors->first('surface') }}</span>
                             @endif
                         </div>
                     </div>
-
                     <div class="mb-3 row">
-                        <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">Chambres</label>
+                        <label for="rooms" class="col-md-4 col-form-label text-md-end text-start">rooms</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->rooms }} ">
+                          <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->rooms }}">
                             @if ($errors->has('rooms'))
                                 <span class="text-danger">{{ $errors->first('rooms') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="price" class="col-md-4 col-form-label text-md-end text-start">Price</label>
+                        <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">bedrooms</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ $product->price }} ">
+                          <input type="text" class="form-control @error('bedrooms') is-invalid @enderror" id="bedrooms" name="bedrooms" value="{{$product->bedrooms }}">
+                            @if ($errors->has('bedrooms'))
+                                <span class="text-danger">{{ $errors->first('bedrooms') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="floor" class="col-md-4 col-form-label text-md-end text-start">floor</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('floor') is-invalid @enderror" id="floor" name="floor" value="{{ $product->floor }}">
+                            @if ($errors->has('floor'))
+                                <span class="text-danger">{{ $errors->first('floor') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="price" class="col-md-4 col-form-label text-md-end text-start">price</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ $product->price }}">
                             @if ($errors->has('price'))
                                 <span class="text-danger">{{ $errors->first('price') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="address" class="col-md-4 col-form-label text-md-end text-start">Adresse</label>
+                        <label for="address" class="col-md-4 col-form-label text-md-end text-start">address</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ $product->address }} ">
+                          <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ $product->address }}">
                             @if ($errors->has('address'))
                                 <span class="text-danger">{{ $errors->first('address') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="city" class="col-md-4 col-form-label text-md-end text-start">Ville</label>
+                        <label for="city" class="col-md-4 col-form-label text-md-end text-start">city</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('ville') is-invalid @enderror" id="ville" name="ville" value="{{ $product->city }} ">
-                            @if ($errors->has('ville'))
+                          <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{ $product->city }}">
+                            @if ($errors->has('city'))
                                 <span class="text-danger">{{ $errors->first('city') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="postal_code" class="col-md-4 col-form-label text-md-end text-start">Code postal</label>
+                        <label for="postal_code" class="col-md-4 col-form-label text-md-end text-start">postal_code</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ $product->postal_code }} ">
+                          <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ $product->postal_code }}">
                             @if ($errors->has('postal_code'))
                                 <span class="text-danger">{{ $errors->first('postal_code') }}</span>
                             @endif

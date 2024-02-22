@@ -80,7 +80,7 @@ class ProductController extends Controller
     {
         //dd($request->validated());
         $product->update($request->all());
-        //dd($product->update($request->all()));
+       // dd($product->update($request->all()));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
     }
