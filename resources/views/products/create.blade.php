@@ -19,11 +19,11 @@
                     @csrf
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start">Name</label>
+                        <label for="title" class="col-md-4 col-form-label text-md-end text-start">Titre</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
-                            @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ old('title') }}">
+                            @if ($errors->has('title'))
+                                <span class="text-danger">{{ $errors->first('title') }}</span>
                             @endif
                         </div>
                     </div>

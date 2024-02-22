@@ -45,6 +45,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request): RedirectResponse
     {
+        dd($request->all());
         Product::create($request->all());
         return redirect()->route('products.index')
                 ->withSuccess('New product is added successfully.');
@@ -75,9 +76,9 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product): RedirectResponse
     {
-        //dd($request->all());
+        dd($request->all());
         $product->update($request->all());
-        dd($product->update($request->all()));
+        //dd($product->update($request->all()));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
     }
