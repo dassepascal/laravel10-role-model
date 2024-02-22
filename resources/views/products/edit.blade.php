@@ -69,7 +69,7 @@
                     <div class="mb-3 row">
                         <label for="price" class="col-md-4 col-form-label text-md-end text-start">Price</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->price }} ">
+                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ $product->price }} ">
                             @if ($errors->has('price'))
                                 <span class="text-danger">{{ $errors->first('price') }}</span>
                             @endif

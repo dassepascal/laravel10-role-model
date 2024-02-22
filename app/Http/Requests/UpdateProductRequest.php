@@ -25,7 +25,13 @@ class UpdateProductRequest extends FormRequest
             'title'=>'required|string|max:250',
             'description'=>'required|string',
             'bedrooms'=>'required|integer',
-            
+            'surface'=>'required|integer',
+            'price'=>'required|numeric',
+            'rooms'=>'required|integer',
+            'address'=>'required|string',
+            'city'=>'required|string',
+            'postal_code'=>'required|string',
+
         ];
     }
 }
