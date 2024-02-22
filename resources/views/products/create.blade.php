@@ -46,6 +46,15 @@
                             @endif
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="rooms" class="col-md-4 col-form-label text-md-end text-start">rooms</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ old('rooms') }}">
+                            @if ($errors->has('rooms'))
+                                <span class="text-danger">{{ $errors->first('rooms') }}</span>
+                            @endif
+                        </div>
+                    </div>
 
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Add Product">

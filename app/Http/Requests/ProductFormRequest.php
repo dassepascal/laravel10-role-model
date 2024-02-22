@@ -25,7 +25,7 @@ class ProductFormRequest extends FormRequest
             'title'=>'required|string|max:250',
             'description'=>'required|string',
             'surface'=>'required|integer',
-            // 'rooms'=>'required|integer',
+             'rooms'=>'required|integer',
             // 'bedrooms'=>'required|integer',
             // 'floor'=>'required|integer',
             // 'price'=>'required|integer',

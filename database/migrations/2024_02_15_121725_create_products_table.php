@@ -17,7 +17,7 @@ return new class extends Migration
             // $table->string('slug')->nullable();
             $table->longText('description');
             $table->integer('surface');
-            // $table->integer('rooms');
+            $table->integer('rooms');
             // $table->integer('bedrooms');
             // $table->integer('floor');
             // $table->integer('price');
