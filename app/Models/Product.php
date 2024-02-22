@@ -11,16 +11,16 @@ class Product extends Model
 
     protected $fillable = [
         'title',
-
+        'slug',
         'description',
-        // 'surface',
-        // 'rooms',
-        // 'bedrooms',
-        // 'floor',
-        // 'price',
-        // 'city',
-        // 'address',
-        // 'postal_code',
-        // 'sold'
+        'surface',
+        'rooms',
+        'bedrooms',
+        'floor',
+        'price',
+        'city',
+        'address',
+        'postal_code',
+        'sold'
     ];
 }
