@@ -18,12 +18,12 @@ return new class extends Migration
             $table->longText('description');
             $table->integer('surface');
             $table->integer('rooms');
-            // $table->integer('bedrooms');
-            // $table->integer('floor');
-            // $table->integer('price');
-            // $table->string('city');
-            // $table->string('address');
-            // $table->string('postal_code');
+            $table->integer('bedrooms');
+            $table->integer('floor');
+             $table->integer('price');
+            $table->string('city');
+            $table->string('address');
+            $table->string('postal_code');
            //$table->boolean('sold')->default(false);
             $table->timestamps();
         });

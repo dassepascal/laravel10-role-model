@@ -48,7 +48,7 @@ class ProductController extends Controller
     {
         //dd($request->all());
         Product::create($request->validated());
-        dd($request->validated());
+        //dd($request->validated());
         return redirect()->route('products.index')
                 ->withSuccess('New product is added successfully.');
     }
