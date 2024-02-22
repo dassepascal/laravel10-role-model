@@ -24,6 +24,8 @@ class UpdateProductRequest extends FormRequest
         return [
             'title'=>'required|string|max:250',
             'description'=>'required|string',
+            'bedrooms'=>'required|integer',
+            
         ];
     }
 }

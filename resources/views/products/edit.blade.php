@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">bedrooms</label>
+                        <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">Pièces</label>
                         <div class="col-md-6">
                           <input type="text" class="form-control @error('bedrooms') is-invalid @enderror" id="bedrooms" name="bedrooms" value="{{ $product->bedrooms }} ">
                             @if ($errors->has('bedrooms'))
@@ -48,11 +48,11 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="surface" class="col-md-4 col-form-label text-md-end text-start">Pièces</label>
+                        <label for="surface" class="col-md-4 col-form-label text-md-end text-start">Surface</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->rooms }} ">
-                            @if ($errors->has('rooms'))
-                                <span class="text-danger">{{ $errors->first('rooms') }}</span>
+                          <input type="text" class="form-control @error('surface') is-invalid @enderror" id="surface" name="surface" value="{{ $product->surface }} ">
+                            @if ($errors->has('surface'))
+                                <span class="text-danger">{{ $errors->first('surface') }}</span>
                             @endif
                         </div>
                     </div>
@@ -63,6 +63,15 @@
                           <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->rooms }} ">
                             @if ($errors->has('rooms'))
                                 <span class="text-danger">{{ $errors->first('rooms') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="price" class="col-md-4 col-form-label text-md-end text-start">Price</label>
+                        <div class="col-md-6">
+                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->price }} ">
+                            @if ($errors->has('price'))
+                                <span class="text-danger">{{ $errors->first('price') }}</span>
                             @endif
                         </div>
                     </div>
