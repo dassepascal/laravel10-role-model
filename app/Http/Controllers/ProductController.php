@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
@@ -43,7 +44,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request): RedirectResponse
+    public function store(ProductFormRequest $request): RedirectResponse
     {
         //dd($request->all());
         Product::create($request->validated());
@@ -75,7 +76,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request, Product $product): RedirectResponse
+    public function update(ProductFormRequest $request, Product $product): RedirectResponse
     {
         //dd($request->validated());
         $product->update($request->all());
