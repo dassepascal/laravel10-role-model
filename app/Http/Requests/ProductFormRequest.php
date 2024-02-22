@@ -24,14 +24,14 @@ class ProductFormRequest extends FormRequest
         return [
             'title'=>'required|string|max:250',
             'description'=>'required|string',
-            // 'surface'=>'required|integer',
+            'surface'=>'required|integer',
             // 'rooms'=>'required|integer',
             // 'bedrooms'=>'required|integer',
             // 'floor'=>'required|integer',
             // 'price'=>'required|integer',
             // 'city'=>'required|string|max:250',
             // 'address'=>'required|string|max:250',
-            // 'postal_code'=>'required|string|max:250',
+             //'postal_code'=>'required|string|max:250',
             // 'sold'=>'required|boolean'
         ];
     }

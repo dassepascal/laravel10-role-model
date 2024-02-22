@@ -11,7 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'title',
-        'slug',
+
         'description',
         'surface',
         'rooms',
@@ -21,6 +21,6 @@ class Product extends Model
         'city',
         'address',
         'postal_code',
-        'sold'
+   //     'sold'
     ];
 }
