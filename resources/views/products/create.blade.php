@@ -15,10 +15,29 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('products.store') }}" method="post">
+                <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-{{-- image --}}
+                    {{-- image --}}
+                    <div class="mb-3 row">
+                        <label for="image" class="col-md-4 col-form-label text-md-end text-start">Image</label>
+                        <div class="col-md-6">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                                name="image">
+                            @if ($errors->has('image'))
+                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                            @endif
+                        </div>
+                    {{-- <div class="mb-3 row">
+                        <label for="image">Image</label> --}}
+                        {{-- <div class="col-md-6">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                                name="image">
+                            @if ($errors->has('image'))
+                            <span class="text-danger">{{ $errors->first('image') }}</span>
+                            @endif
+                        </div> --}}
 
+                    </div>
                     <div class="mb-3 row">
                         <label for="title" class="col-md-4 col-form-label text-md-end text-start">Titre</label>
                         <div class="col-md-6">
@@ -125,13 +144,13 @@
 
                     <div class="mb-3 row ">
                         <label class="form-checked-label col-md-4  text-md-end text-start" for="sold">Vendu</label>
-                    <div class="form-check form-switch col-md-6">
-                        <input type="hidden" name="sold" value="0" class="">
-                        <input @checked (old('sold','value' ?? false) )
-                            class="form-check-input @error('sold') is-invalid @enderror" role="switch" type="checkbox"
-                            name="sold" id="sold" value="1" {{ 'sold' ? 'checked' : '' }}>
+                        <div class="form-check form-switch col-md-6">
+                            <input type="hidden" name="sold" value="0" class="">
+                            <input @checked (old('sold','value' ?? false) )
+                                class="form-check-input @error('sold') is-invalid @enderror" role="switch"
+                                type="checkbox" name="sold" id="sold" value="1" {{ 'sold' ? 'checked' : '' }}>
 
-                    </div>
+                        </div>
                     </div>
 
                     <div class="mb-3 row">
