@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
     use HasFactory;
+
 
     protected $fillable = [
         'title',
@@ -23,4 +25,9 @@ class Product extends Model
         'sold',
         'image'
     ];
+
+    public function imageUrl(): string
+    {
+        return Storage::disk('public')->url($this->image);
+    }
 }

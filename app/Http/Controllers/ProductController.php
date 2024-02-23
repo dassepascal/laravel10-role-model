@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
+use Illuminate\View\View;
+use GuzzleHttp\Psr7\UploadedFile;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProductFormRequest;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use GuzzleHttp\Psr7\UploadedFile;
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
 
 class ProductController extends Controller
 {
@@ -47,8 +48,10 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request): RedirectResponse
     {
-        dd($request->all());
-        Product::create($request->validated());
+        //dd($request->validated());
+
+       $product = Product::create($this->extracData(new Product(), $request));
+       //dd($product);
         //dd($request->validated());
         return redirect()->route('products.index')
                 ->withSuccess('New product is added successfully.');
@@ -80,17 +83,18 @@ class ProductController extends Controller
     public function update(ProductFormRequest $request, Product $product): RedirectResponse
     {
 
-        $data = ($request->validated());
-        /** @var UploadedFile|null  $image */
-        $image = $request->validated('image');
-        if($image !== null && !$image->getError() ) {
-            $imagePath =  $image->store('productImage', 'public');
-            $data['image'] = $imagePath;
-        }
+        // $data = ($request->validated());
+        // /** @var UploadedFile|null  $image */
+        // $image = $request->validated('image');
+
+        // if($image !== null && !$image->getError() && $image= $request->file('image')) {
+        //     $imagePath =  $image->store('productImage', 'public');
+        //     $data['image'] = $imagePath;
+        // }
 
         //chemin de l'image
 
-        $product->update($data);
+        $product->update($this->extracData($product, $request));
         // dd($product->update($data));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
@@ -99,8 +103,32 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    private function extracData(Product $product, ProductFormRequest $request): array
+    {
+        $data = $request->validated();
+        /** @var UploadedFile|null  $image */
+        $image = $request->validated('image');
+        if($image === null || $image->getError()) {
+
+            return $data;
+        }
+        if($product->image) {
+            Storage::disk('public')->delete($product->image);
+            // Storage::disk('public')->path();
+        }
+
+        $data['image'] =  $image->store('productImage', 'public');
+
+
+        return $data;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Product $product): RedirectResponse
     {
+        $product->image && Storage::disk('public')->delete($product->image);
         $product->delete();
         return redirect()->route('products.index')
                 ->withSuccess('Product is deleted successfully.');

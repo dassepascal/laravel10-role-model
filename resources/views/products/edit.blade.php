@@ -18,9 +18,8 @@
                 <form action="{{ route('products.update', $product->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("PUT")
-                    {{-- image --}}
                     <div class="mb-3 row">
-                        <label for="image">Image</label>
+                        <label for="image" class="col-md-4 col-form-label text-md-end text-start">Image</label>
                         <div class="col-md-6">
                             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                                 name="image">
@@ -28,7 +27,6 @@
                             <span class="text-danger">{{ $errors->first('image') }}</span>
                             @endif
                         </div>
-
                     </div>
                     <div class="mb-3 row">
                         <div class="mb-3 row">
