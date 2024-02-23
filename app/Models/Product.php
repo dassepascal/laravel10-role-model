@@ -21,6 +21,7 @@ class Product extends Model
         'city',
         'address',
         'postal_code',
-        'sold'
+        'sold',
+        'image'
     ];
 }

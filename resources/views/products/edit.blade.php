@@ -122,20 +122,7 @@
                             @endif
                         </div>
                     </div>
-                    {{-- <div class="mb-3 row ">
-                        <label class="form-checked-label col-md-4  text-md-end text-start" for="sold">Vendu</label>
-                        <div class="form-check form-switch col-md-6">
-                            <input type="hidden" name="sold" value="0">
-                            <input @checked (old($product->sold,'value' ?? false))
-                            class="form-check-input @error('sold') is-invalid @enderror" role="switch" type="checkbox"
-                            name="sold" id="sold" value="1" {{ $product->sold ? 'checked' : '' }}>
-                            @error('sold')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div> --}}
+                  
                     @include('shared.checkbox', ['name' => 'sold', 'label' => 'Vendu', 'value' => $product->sold])
 
 

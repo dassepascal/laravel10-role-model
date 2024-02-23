@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(3),
-           
+
             'description' => $this->faker->text,
             'surface' => $this->faker->numberBetween(20, 300),
             'rooms' => $this->faker->numberBetween(1, 10),
@@ -28,7 +28,8 @@ class ProductFactory extends Factory
             'city' => $this->faker->city,
             'address' => $this->faker->address,
             'postal_code' => $this->faker->postcode,
-            'sold' => $this->faker->boolean
+            'sold' => $this->faker->boolean,
+            'image' => $this->faker->imageUrl(640, 480, 'house', true)
         ];
     }
 }

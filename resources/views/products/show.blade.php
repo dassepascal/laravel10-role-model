@@ -15,6 +15,13 @@
                 </div>
             </div>
             <div class="card-body">
+                {{-- image --}}
+                <div class="mb-3 row">
+                    <label for="image" class="col-md-4 col-form-label text-md-end text-start">Image</label>
+                    <div class="col-md-6">
+                        <img src="{{ $product->image }}" alt="{{ $product->title }}" class="img-thumbnail">
+                    </div>
+                </div>
 
                     <div class="row">
                         <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
