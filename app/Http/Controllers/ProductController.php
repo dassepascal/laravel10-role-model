@@ -17,11 +17,11 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-       $this->middleware('auth');
-       $this->middleware('permission:create-product|edit-product|delete-product', ['only' => ['index','show']]);
-       $this->middleware('permission:create-product', ['only' => ['create','store']]);
-       $this->middleware('permission:edit-product', ['only' => ['edit','update']]);
-       $this->middleware('permission:delete-product', ['only' => ['destroy']]);
+        $this->middleware('auth');
+        $this->middleware('permission:create-product|edit-product|delete-product', ['only' => ['index','show']]);
+        $this->middleware('permission:create-product', ['only' => ['create','store']]);
+        $this->middleware('permission:edit-product', ['only' => ['edit','update']]);
+        $this->middleware('permission:delete-product', ['only' => ['destroy']]);
     }
 
     /**
@@ -80,22 +80,18 @@ class ProductController extends Controller
     public function update(ProductFormRequest $request, Product $product): RedirectResponse
     {
 
-       $data =($request->validated());
-       /** @var UploadedFile|null  $image */
-       $image = $request->validated('image');
+        $data = ($request->validated());
+        /** @var UploadedFile|null  $image */
+        $image = $request->validated('image');
+        if($image !== null && !$image->getError() ) {
+            $imagePath =  $image->store('productImage', 'public');
+            $data['image'] = $imagePath;
+        }
 
-           //suppression de l'ancienne image
-
-           $imagePath =  $image->store('productImage', 'public');
-           // sauvegarde de l'image
-             $data['image'] = $imagePath;
-            // dd( $data['image']);
-      
-       //chemin de l'image
-
+        //chemin de l'image
 
         $product->update($data);
-       // dd($product->update($data));
+        // dd($product->update($data));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
     }
