@@ -22,102 +22,121 @@
                     <div class="mb-3 row">
                         <label for="title" class="col-md-4 col-form-label text-md-end text-start">Titre</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" value="{{ $product->title }}">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
+                                name="title" value="{{ $product->title }}">
                             @if ($errors->has('title'))
-                                <span class="text-danger">{{ $errors->first('title') }}</span>
+                            <span class="text-danger">{{ $errors->first('title') }}</span>
                             @endif
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start">Description</label>
+                        <label for="description"
+                            class="col-md-4 col-form-label text-md-end text-start">Description</label>
                         <div class="col-md-6">
-                            <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{ $product->description }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" id="description"
+                                name="description">{{ $product->description }}</textarea>
                             @if ($errors->has('description'))
-                                <span class="text-danger">{{ $errors->first('description') }}</span>
+                            <span class="text-danger">{{ $errors->first('description') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="surface" class="col-md-4 col-form-label text-md-end text-start">Surface</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('surface') is-invalid @enderror" id="surface" name="surface" value="{{ $product->surface }}">
+                            <input type="text" class="form-control @error('surface') is-invalid @enderror" id="surface"
+                                name="surface" value="{{ $product->surface }}">
                             @if ($errors->has('surface'))
-                                <span class="text-danger">{{ $errors->first('surface') }}</span>
+                            <span class="text-danger">{{ $errors->first('surface') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="rooms" class="col-md-4 col-form-label text-md-end text-start">rooms</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms" name="rooms" value="{{ $product->rooms }}">
+                            <input type="text" class="form-control @error('rooms') is-invalid @enderror" id="rooms"
+                                name="rooms" value="{{ $product->rooms }}">
                             @if ($errors->has('rooms'))
-                                <span class="text-danger">{{ $errors->first('rooms') }}</span>
+                            <span class="text-danger">{{ $errors->first('rooms') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="bedrooms" class="col-md-4 col-form-label text-md-end text-start">bedrooms</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('bedrooms') is-invalid @enderror" id="bedrooms" name="bedrooms" value="{{$product->bedrooms }}">
+                            <input type="text" class="form-control @error('bedrooms') is-invalid @enderror"
+                                id="bedrooms" name="bedrooms" value="{{$product->bedrooms }}">
                             @if ($errors->has('bedrooms'))
-                                <span class="text-danger">{{ $errors->first('bedrooms') }}</span>
+                            <span class="text-danger">{{ $errors->first('bedrooms') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="floor" class="col-md-4 col-form-label text-md-end text-start">floor</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('floor') is-invalid @enderror" id="floor" name="floor" value="{{ $product->floor }}">
+                            <input type="text" class="form-control @error('floor') is-invalid @enderror" id="floor"
+                                name="floor" value="{{ $product->floor }}">
                             @if ($errors->has('floor'))
-                                <span class="text-danger">{{ $errors->first('floor') }}</span>
+                            <span class="text-danger">{{ $errors->first('floor') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="price" class="col-md-4 col-form-label text-md-end text-start">price</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ $product->price }}">
+                            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price"
+                                name="price" value="{{ $product->price }}">
                             @if ($errors->has('price'))
-                                <span class="text-danger">{{ $errors->first('price') }}</span>
+                            <span class="text-danger">{{ $errors->first('price') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="address" class="col-md-4 col-form-label text-md-end text-start">address</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ $product->address }}">
+                            <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
+                                name="address" value="{{ $product->address }}">
                             @if ($errors->has('address'))
-                                <span class="text-danger">{{ $errors->first('address') }}</span>
+                            <span class="text-danger">{{ $errors->first('address') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="city" class="col-md-4 col-form-label text-md-end text-start">city</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{ $product->city }}">
+                            <input type="text" class="form-control @error('city') is-invalid @enderror" id="city"
+                                name="city" value="{{ $product->city }}">
                             @if ($errors->has('city'))
-                                <span class="text-danger">{{ $errors->first('city') }}</span>
+                            <span class="text-danger">{{ $errors->first('city') }}</span>
                             @endif
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="postal_code" class="col-md-4 col-form-label text-md-end text-start">postal_code</label>
+                        <label for="postal_code"
+                            class="col-md-4 col-form-label text-md-end text-start">postal_code</label>
                         <div class="col-md-6">
-                          <input type="text" class="form-control @error('postal_code') is-invalid @enderror" id="postal_code" name="postal_code" value="{{ $product->postal_code }}">
+                            <input type="text" class="form-control @error('postal_code') is-invalid @enderror"
+                                id="postal_code" name="postal_code" value="{{ $product->postal_code }}">
                             @if ($errors->has('postal_code'))
-                                <span class="text-danger">{{ $errors->first('postal_code') }}</span>
+                            <span class="text-danger">{{ $errors->first('postal_code') }}</span>
                             @endif
                         </div>
                     </div>
-                    {{-- <div class="mb-3 row">
-                        <label for="sold" class="col-md-4 col-form-label text-md-end text-start">sold</label>
-                        <div class="col-md-6">
-                          <input type="text" class="form-control @error('sold') is-invalid @enderror" id="sold" name="sold" value="{{ $product->sold }} ">
-                            @if ($errors->has('sold'))
-                                <span class="text-danger">{{ $errors->first('sold') }}</span>
-                            @endif
+                    {{-- <div class="mb-3 row ">
+                        <label class="form-checked-label col-md-4  text-md-end text-start" for="sold">Vendu</label>
+                        <div class="form-check form-switch col-md-6">
+                            <input type="hidden" name="sold" value="0">
+                            <input @checked (old($product->sold,'value' ?? false))
+                            class="form-check-input @error('sold') is-invalid @enderror" role="switch" type="checkbox"
+                            name="sold" id="sold" value="1" {{ $product->sold ? 'checked' : '' }}>
+                            @error('sold')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
                     </div> --}}
+                    @include('shared.checkbox', ['name' => 'sold', 'label' => 'Vendu', 'value' => $product->sold])
 
 
                     <div class="mb-3 row">

@@ -78,6 +78,12 @@
                             {{ $product->postal_code }}
                         </div>
                     </div>
+                    {{-- sold --}}
+                    <div class="row">
+                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Vendu:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                            {{ $product->sold ? 'Oui' : 'Non' }}
+                        </div>
 
             </div>
         </div>

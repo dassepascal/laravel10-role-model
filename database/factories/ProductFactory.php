@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(3),
-            'slug' => $this->faker->slug,
+           
             'description' => $this->faker->text,
             'surface' => $this->faker->numberBetween(20, 300),
             'rooms' => $this->faker->numberBetween(1, 10),

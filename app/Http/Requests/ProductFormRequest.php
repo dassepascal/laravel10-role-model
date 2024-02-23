@@ -32,7 +32,7 @@ class ProductFormRequest extends FormRequest
             'address' => 'required|string|max:250',
             'city' => 'required|string|max:250',
             'postal_code' => 'required|string|max:250',
-            // 'sold'=>'required|boolean'
+             'sold'=>'required|boolean'
         ];
     }
 }
