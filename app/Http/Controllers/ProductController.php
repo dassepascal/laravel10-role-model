@@ -48,10 +48,10 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request): RedirectResponse
     {
-        dd($request->validated());
+        //dd($request->validated());
 
        $product = Product::create($this->extracData(new Product(), $request));
-       dd($product);
+       //dd($product);
         //dd($request->validated());
         return redirect()->route('products.index')
                 ->withSuccess('New product is added successfully.');
@@ -128,6 +128,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): RedirectResponse
     {
+        $product->image && Storage::disk('public')->delete($product->image);
         $product->delete();
         return redirect()->route('products.index')
                 ->withSuccess('Product is deleted successfully.');
