@@ -83,7 +83,8 @@ class ProductController extends Controller
         $data = ($request->validated());
         /** @var UploadedFile|null  $image */
         $image = $request->validated('image');
-        if($image !== null && !$image->getError() ) {
+
+        if($image !== null && !$image->getError() && $image= $request->file('image')) {
             $imagePath =  $image->store('productImage', 'public');
             $data['image'] = $imagePath;
         }

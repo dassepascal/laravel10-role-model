@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -23,4 +24,9 @@ class Product extends Model
         'sold',
         'image'
     ];
+
+    public function imageUrl(): string
+    {
+        return Storage::url($this->image);
+    }
 }
