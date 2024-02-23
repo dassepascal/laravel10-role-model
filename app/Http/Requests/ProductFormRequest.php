@@ -22,6 +22,7 @@ class ProductFormRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'image' => 'image|mimes:png,jpg,jpeg,gif,svg|max:2048',
             'title' => 'required|string|max:250',
             'description' => 'required|string',
             'surface' => 'required|integer',
@@ -32,7 +33,8 @@ class ProductFormRequest extends FormRequest
             'address' => 'required|string|max:250',
             'city' => 'required|string|max:250',
             'postal_code' => 'required|string|max:250',
-             'sold'=>'required|boolean'
+             'sold'=>'required|boolean',
+
         ];
     }
 }

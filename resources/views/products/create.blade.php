@@ -17,6 +17,7 @@
             <div class="card-body">
                 <form action="{{ route('products.store') }}" method="post">
                     @csrf
+{{-- image --}}
 
                     <div class="mb-3 row">
                         <label for="title" class="col-md-4 col-form-label text-md-end text-start">Titre</label>
@@ -132,7 +133,7 @@
 
                     </div>
                     </div>
-                    
+
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Add Product">
                     </div>
