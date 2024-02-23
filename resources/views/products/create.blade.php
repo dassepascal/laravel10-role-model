@@ -18,7 +18,18 @@
                 <form action="{{ route('products.store') }}" method="post">
                     @csrf
 {{-- image --}}
+  {{-- image --}}
+  <div class="mb-3 row">
+    <label for="image">Image</label>
+    <div class="col-md-6">
+        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+            name="image">
+        @if ($errors->has('image'))
+        <span class="text-danger">{{ $errors->first('image') }}</span>
+        @endif
+    </div>
 
+</div>
                     <div class="mb-3 row">
                         <label for="title" class="col-md-4 col-form-label text-md-end text-start">Titre</label>
                         <div class="col-md-6">

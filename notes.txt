@@ -1,3 +1,13 @@
 1 - modifier table products
 
 image ne aps oublier encypte="multipart/form-data"
+
+
+modification de .env
+APP_URL=http://localhost:8000
+
+parce que :  public function imageUrl(): string
+    {
+        return Storage::disk('public')->url($this->image);
+    }
+

@@ -10,6 +10,7 @@ class Product extends Model
 {
     use HasFactory;
 
+
     protected $fillable = [
         'title',
         'description',
@@ -27,6 +28,6 @@ class Product extends Model
 
     public function imageUrl(): string
     {
-        return Storage::url($this->image);
+        return Storage::disk('public')->url($this->image);
     }
 }
