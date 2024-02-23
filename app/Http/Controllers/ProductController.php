@@ -6,6 +6,7 @@ use App\Http\Requests\ProductFormRequest;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -80,9 +81,21 @@ class ProductController extends Controller
     {
 
        $data =($request->validated());
-       dd($data);
-        $product->update($request->all());
-       // dd($product->update($request->all()));
+       /** @var UploadedFile|null  $image */
+       $image = $request->validated('image');
+
+           //suppression de l'ancienne image
+
+           $imagePath =  $image->store('productImage', 'public');
+           // sauvegarde de l'image
+             $data['image'] = $imagePath;
+            // dd( $data['image']);
+      
+       //chemin de l'image
+
+
+        $product->update($data);
+       // dd($product->update($data));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
     }
