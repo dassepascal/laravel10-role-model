@@ -1,54 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
-                            <ul class="my-0">
-                                @foreach ($errors->all() as $error )
-                                    <li>{{ $error }}</li>
-
-                                @endforeach
-                            </ul>
-
-                        </div>
-
-                    @endif
-
-                    {{ __('You are logged in!') }}
-
-                    <p>This is your application dashboard.</p>
-                    @canany(['create-role', 'edit-role', 'delete-role'])
-                        <a class="btn btn-primary" href="{{ route('admin.roles.index') }}">
-                            <i class="bi bi-person-fill-gear"></i> Manage Roles</a>
-                    @endcanany
-                    @canany(['create-user', 'edit-user', 'delete-user'])
-                        <a class="btn btn-success" href="{{ route('admin.users.index') }}">
-                            <i class="bi bi-people"></i> Manage Users</a>
-                    @endcanany
-                    @canany(['create-product', 'edit-product', 'delete-product'])
-                        <a class="btn btn-warning" href="{{ route('admin.products.index') }}">
-                            <i class="bi bi-bag"></i> Manage Products</a>
-                    @endcanany
-                    @canany(['create-option', 'edit-option', 'delete-option'])
-                    <a class="btn btn-danger" href="{{ route('admin.options.index') }}">
-                        <i class="bi bi-bag"></i> Manage Option</a>
-                @endcanany
-                    <p>&nbsp;</p>
-                </div>
-            </div>
-        </div>
+<div class="bg-light p-5 text-center">
+    <div class="container">
+        <h1>Agence lorem ipsum</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ratione laboriosam quis esse beatae, ducimus voluptate rem voluptas facere voluptates autem libero praesentium molestias ullam possimus at? Quia, ipsa molestiae.</p>
     </div>
+</div>
+<div class="container">
+    <h2>Nos derniers biens</h2>
+     <div class="row">
+        @foreach ($products as $product )
+        <div class="col">
+            @include('products.card')
+                    </div>
+        @endforeach
+    </div> 
 </div>
 @endsection
