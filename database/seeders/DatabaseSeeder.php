@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Option;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
@@ -18,8 +19,18 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             SuperAdminSeeder::class,
-            ProductSeeder::class
+            OptionSeeder::class,
+            ProductSeeder::class,
+
         ]);
+
+        // Option::factory(10)->create();
+
+        // $ids = range(1, 10);
+        // Product::factory(10)->create()->each(function ($product) use ($ids) {
+        //     shuffle($ids);
+        //     $product->options()->attach(array_rand($ids, 3));
+        // });
 
     }
 }

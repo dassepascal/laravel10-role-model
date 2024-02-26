@@ -13,6 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            <ul class="my-0">
+                                @foreach ($errors->all() as $error )
+                                    <li>{{ $error }}</li>
+
+                                @endforeach
+                            </ul>
+
+                        </div>
+
+                    @endif
 
                     {{ __('You are logged in!') }}
 

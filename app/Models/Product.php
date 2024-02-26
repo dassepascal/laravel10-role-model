@@ -30,4 +30,9 @@ class Product extends Model
     {
         return Storage::disk('public')->url($this->image);
     }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class);
+    }
 }

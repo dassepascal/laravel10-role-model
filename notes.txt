@@ -2,6 +2,9 @@ https://www.itsolutionstuff.com/post/how-to-use-bootstrap-icons-in-laravel-vitee
 
 npm install bootstrap-icons --save-dev
 
+Astuces: affichage des erreurs
+
+
 
 1 - modifier table products
 

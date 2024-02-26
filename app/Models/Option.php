@@ -9,4 +9,9 @@ class Option extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }

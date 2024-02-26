@@ -34,6 +34,7 @@ class ProductFormRequest extends FormRequest
             'city' => 'required|string|max:250',
             'postal_code' => 'required|string|max:250',
              'sold'=>'required|boolean',
+             'options' => ['array','exists:options,id','required'],
 
         ];
     }

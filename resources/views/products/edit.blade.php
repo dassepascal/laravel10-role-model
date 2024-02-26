@@ -133,7 +133,8 @@
                                 @endif
                             </div>
                         </div>
-
+                        @include('shared.select', ['name' => 'options', 'label' => 'Options',
+                        'value'=>$product->options->pluck('id'), 'options' => $options, 'multiple' => true])
                         @include('shared.checkbox', ['name' => 'sold', 'label' => 'Vendu', 'value' => $product->sold])
 
 

@@ -88,6 +88,14 @@
                             {{ $product->postal_code }}
                         </div>
                     </div>
+                    {{-- options --}}
+                    <div class="row">
+                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Options:</strong></label>
+                        <div class="col-md-6" style="line-height: 35px;">
+                            @foreach ($product->options as $option)
+                            <span class="badge bg-secondary">{{ $option->name }}</span>
+                            @endforeach
+                        </div>
                     {{-- sold --}}
                     <div class="row">
                         <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Vendu:</strong></label>

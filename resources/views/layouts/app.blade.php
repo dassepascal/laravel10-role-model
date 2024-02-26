@@ -58,6 +58,7 @@
                                 </li>
                             @endif
                         @else
+                        {{-- todo active --}}
                             @canany(['create-role', 'edit-role', 'delete-role'])
                                 <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Roles</a></li>
                             @endcanany

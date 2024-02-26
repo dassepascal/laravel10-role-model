@@ -131,7 +131,8 @@
                             @endif
                         </div>
                     </div>
-
+                    @include('shared.select', ['name' => 'options', 'label' => 'Options',
+                    'value'=>$product->options->pluck('id'), 'options' => $options, 'multiple' => true])
                     <div class="mb-3 row ">
                         <label class="form-checked-label col-md-4  text-md-end text-start" for="sold">Vendu</label>
                         <div class="form-check form-switch col-md-6">

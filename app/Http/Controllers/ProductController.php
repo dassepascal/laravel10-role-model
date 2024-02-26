@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Option;
 use App\Models\Product;
 use Illuminate\View\View;
 use GuzzleHttp\Psr7\UploadedFile;
@@ -40,7 +41,13 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view('products.create');
+        //dd(Option::pluck('name', 'id'));
+        $product = new Product();
+        return view('products.create',[
+            'product' => $product,
+            'options' => Option::pluck('name', 'id')
+
+        ]);
     }
 
     /**
@@ -48,9 +55,10 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request): RedirectResponse
     {
-        //dd($request->validated());
+       // dd($request->all());
 
        $product = Product::create($this->extracData(new Product(), $request));
+        $product->options()->attach($request->validated('options'));
        //dd($product);
         //dd($request->validated());
         return redirect()->route('products.index')
@@ -62,6 +70,7 @@ class ProductController extends Controller
      */
     public function show(Product $product): View
     {
+
         return view('products.show', [
             'product' => $product
         ]);
@@ -73,7 +82,8 @@ class ProductController extends Controller
     public function edit(Product $product): View
     {
         return view('products.edit', [
-            'product' => $product
+            'product' => $product,
+            'options' => Option::pluck('name', 'id')
         ]);
     }
 
@@ -95,6 +105,7 @@ class ProductController extends Controller
         //chemin de l'image
 
         $product->update($this->extracData($product, $request));
+        $product->options()->sync($request->validated('options'));
         // dd($product->update($data));
         return redirect()->back()
                 ->withSuccess('Product is updated successfully.');
