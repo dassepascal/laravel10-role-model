@@ -9,9 +9,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('products.index', [
-            'products' => Product::orderBy('id','DESC')->paginate(4)
-        ]  );
+        return view('products.index',[
+            'products' => Product::paginate(2)
+
+        ]);
     }
     public function create()
     {
@@ -21,10 +22,22 @@ class ProductController extends Controller
     {
         return redirect()->route('product.index');
     }
-    public function show($id)
+    public function show(string $slug, Product $product)
     {
-        return view('product.show');
+
+        $product = Product::where('slug', $slug)->firstOrFail();
+        //dd( $product, $slug);
+        if($slug !== $product->slug) {
+            return redirect()->route('products.show', ['slug' => $product->slug, 'product' => $product]);
+
+
+        }
+        return view('products.show', [
+            'product' => $product
+
+        ]);
     }
+
     public function edit($id)
     {
         return view('product.edit');

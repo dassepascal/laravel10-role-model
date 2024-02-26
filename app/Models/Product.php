@@ -13,6 +13,7 @@ class Product extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'description',
         'surface',
         'rooms',
@@ -34,5 +35,10 @@ class Product extends Model
     public function options()
     {
         return $this->belongsToMany(Option::class);
+    }
+
+    public function getFormattedPriceAttribute(): string
+    {
+        return str_replace('.', ',', $this->price/100).'€';
     }
 }

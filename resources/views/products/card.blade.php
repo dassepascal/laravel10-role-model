@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">
-            <a href="">{{ $product->title }}</a>
+            <a href="{{  route('products.show', [ 'slug'=>$product->slug,'product'=>$product]) }}">{{ $product->title }}</a>
         </h5>
         <p class="card-text">{{  $product->surface }} m² - {{  $product->city }} {{ $product->postal_code }}</p>
         <div class="text-primary bold" style="font-size:1.4 rem">

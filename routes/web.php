@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+$idRegex = '[0-9]+';
+$slugRegex = '[a-z0-9-]+';
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/biens', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+Route::get('/biens/{slug}', [App\Http\Controllers\ProductController::class, 'show'])->name('products.show')->where(['slug' => $slugRegex, 'product' => $idRegex]);
 
 Auth::routes();
 

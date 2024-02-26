@@ -37,11 +37,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Products</a>
+                            <a class="nav-link" href="{{ route('products.index') }}"> Biens</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"> Options</a>
-                        </li>
+
                     </ul>
 
 
@@ -113,7 +111,7 @@
                         </div>
                         @endif
 
-                       
+
                         @yield('content')
 
 
