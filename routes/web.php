@@ -23,7 +23,7 @@ Route::get('/biens/{slug}', [App\Http\Controllers\ProductController::class, 'sho
 
 Auth::routes();
 
-
+Route::post('/biens/{product}/contact', [App\Http\Controllers\ProductController::class, 'contact'])->name('product.contact')->where('product', $idRegex);
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::resources([

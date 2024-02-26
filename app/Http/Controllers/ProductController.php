@@ -5,28 +5,44 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+use App\Mail\ProductContactMail;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ProductContactRequest;
+use App\Http\Requests\SearchProductsRequest;
+
 class ProductController extends Controller
 {
-    public function index()
+    public function index(SearchProductsRequest $request)
     {
-        return view('products.index',[
-            'products' => Product::paginate(2)
 
+        $query = Product::query()->with('options');
+
+        if($price = $request->validated('price')) {
+           $query = $query->where('price', '<=', $price);
+        }
+        if($surface = $request->validated('surface')) {
+            $query = $query->where('surface','<=',$surface);
+        }
+        if($rooms =  $request->validated('rooms')) {
+            $query = $query->where('rooms','<=', $rooms);
+        }
+        if($title = $request->validated('title')) {
+            $query = $query->where('title', 'like', "%{$title}%");
+        }
+
+
+        return view('products.index',[
+            'products' => $query->paginate(2),
+            'input'=> $request->validated()
         ]);
     }
-    public function create()
-    {
-        return view('product.create');
-    }
-    public function store(Request $request)
-    {
-        return redirect()->route('product.index');
-    }
+
+
     public function show(string $slug, Product $product)
     {
 
         $product = Product::where('slug', $slug)->firstOrFail();
-        //dd( $product, $slug);
+
         if($slug !== $product->slug) {
             return redirect()->route('products.show', ['slug' => $product->slug, 'product' => $product]);
 
@@ -38,16 +54,12 @@ class ProductController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function contact(ProductContactRequest $request, Product $product)
     {
-        return view('product.edit');
+        Mail::send(new ProductContactMail($product, $request->validated()));
+         return back()->with('success', 'Votre email a bien été envoyé');
     }
-    public function update(Request $request, $id)
-    {
-        return redirect()->route('product.index');
-    }
-    public function destroy($id)
-    {
-        return redirect()->route('product.index');
-    }
+
+
+
 }
