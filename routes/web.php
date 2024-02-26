@@ -26,6 +26,7 @@ Route::resources([
 'roles' => App\Http\Controllers\RoleController::class,
 'users' => App\Http\Controllers\UserController::class,
 'products' => App\Http\Controllers\ProductController::class,
+'options' => App\Http\Controllers\OptionController::class,
 ]);
 
 

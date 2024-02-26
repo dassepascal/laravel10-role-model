@@ -30,9 +30,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li><a class="nav-link" href="#"> Products</a></li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Options</a>
+                        </li>
                     </ul>
+
+
+
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -59,6 +67,11 @@
                             @canany(['create-product', 'edit-product', 'delete-product'])
                                 <li><a class="nav-link" href="{{ route('products.index') }}">Manage Products</a></li>
                             @endcanany
+
+                            @canany(['create-option', 'edit-option', 'delete-option'])
+                            <li><a class="nav-link" href="{{ route('options.index') }}">Manage Options</a></li>
+                        @endcanany
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -96,7 +109,7 @@
                         <h3 class="text-center mt-3 mb-3">Mon titre  </h3>
                         @yield('content')
 
-                      
+
 
 
                     </div>

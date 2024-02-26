@@ -1,3 +1,8 @@
+https://www.itsolutionstuff.com/post/how-to-use-bootstrap-icons-in-laravel-viteexample.html?utm_content=cmp-true
+
+npm install bootstrap-icons --save-dev
+
+
 1 - modifier table products
 
 image ne aps oublier encypte="multipart/form-data"

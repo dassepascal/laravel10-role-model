@@ -26,7 +26,10 @@ class RoleSeeder extends Seeder
             'delete-user',
             'create-product',
             'edit-product',
-            'delete-product'
+            'delete-product',
+            'create-option',
+            'edit-option',
+            'delete-option'
         ]);
 
         $admin->givePermissionTo([
@@ -35,13 +38,19 @@ class RoleSeeder extends Seeder
             'delete-user',
             'create-product',
             'edit-product',
-            'delete-product'
+            'delete-product',
+            'create-option',
+            'edit-option',
+            'delete-option'
         ]);
 
         $productManager->givePermissionTo([
             'create-product',
             'edit-product',
-            'delete-product'
+            'delete-product',
+            'create-option',
+            'edit-option',
+            'delete-option'
         ]);
     }
 }

@@ -29,6 +29,10 @@
                         <a class="btn btn-warning" href="{{ route('products.index') }}">
                             <i class="bi bi-bag"></i> Manage Products</a>
                     @endcanany
+                    @canany(['create-option', 'edit-option', 'delete-option'])
+                    <a class="btn btn-danger" href="{{ route('options.index') }}">
+                        <i class="bi bi-bag"></i> Manage Option</a>
+                @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>
