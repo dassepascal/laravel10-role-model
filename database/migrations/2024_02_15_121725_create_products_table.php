@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('title');
-            // $table->string('slug')->nullable();
+            $table->string('slug')->nullable();
             $table->longText('description');
             $table->integer('surface');
             $table->integer('rooms');

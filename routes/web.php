@@ -18,7 +18,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Auth::routes();
 
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::resources([
@@ -29,12 +29,7 @@ Route::resources([
 ]);
 });
 
-// Route::resources([
-// 'roles' => App\Http\Controllers\RoleController::class,
-// 'users' => App\Http\Controllers\UserController::class,
-// 'products' => App\Http\Controllers\ProductController::class,
-// 'options' => App\Http\Controllers\OptionController::class,
-// ]);
+
 
 
 
