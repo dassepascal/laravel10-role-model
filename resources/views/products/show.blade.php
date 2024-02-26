@@ -27,7 +27,7 @@
 
 
                     <div class="row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
+                        <label for="title" class="col-md-4 col-form-label text-md-end text-start"><strong>Titre:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $product->title }}
                         </div>
