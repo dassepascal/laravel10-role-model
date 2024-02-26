@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Option;
 use App\Models\Product;
 use Illuminate\View\View;
 use GuzzleHttp\Psr7\UploadedFile;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductFormRequest;
@@ -31,7 +32,7 @@ class ProductController extends Controller
      */
     public function index(): View
     {
-        return view('products.index', [
+        return view('admin.products.index', [
             'products' => Product::latest()->paginate(10)
         ]);
     }
@@ -43,7 +44,7 @@ class ProductController extends Controller
     {
         //dd(Option::pluck('name', 'id'));
         $product = new Product();
-        return view('products.create',[
+        return view('admin.products.create',[
             'product' => $product,
             'options' => Option::pluck('name', 'id')
 
@@ -61,7 +62,7 @@ class ProductController extends Controller
         $product->options()->attach($request->validated('options'));
        //dd($product);
         //dd($request->validated());
-        return redirect()->route('products.index')
+        return redirect()->route('admin.products.index')
                 ->withSuccess('New product is added successfully.');
     }
 
@@ -71,7 +72,7 @@ class ProductController extends Controller
     public function show(Product $product): View
     {
 
-        return view('products.show', [
+        return view('admin.products.show', [
             'product' => $product
         ]);
     }
@@ -81,7 +82,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product): View
     {
-        return view('products.edit', [
+        return view('admin.products.edit', [
             'product' => $product,
             'options' => Option::pluck('name', 'id')
         ]);
@@ -141,7 +142,7 @@ class ProductController extends Controller
     {
         $product->image && Storage::disk('public')->delete($product->image);
         $product->delete();
-        return redirect()->route('products.index')
+        return redirect()->route('admin.products.index')
                 ->withSuccess('Product is deleted successfully.');
     }
 }

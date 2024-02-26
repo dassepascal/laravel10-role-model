@@ -11,14 +11,14 @@
 
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('options.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('admin.options.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('options.update', $option->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.options.update', $option->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("PUT")
-                  
+
                     <div class="mb-3 row">
                         <div class="mb-3 row">
                             <label for="name" class="col-md-4 col-form-label text-md-end text-start">Titre</label>

@@ -11,11 +11,11 @@
                     Add New Product
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('admin.products.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.products.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     {{-- image --}}
                     <div class="mb-3 row">

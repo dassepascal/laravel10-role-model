@@ -9,11 +9,11 @@
                     Add New User
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('users.store') }}" method="post">
+                <form action="{{ route('admin.users.store') }}" method="post">
                     @csrf
 
                     <div class="mb-3 row">

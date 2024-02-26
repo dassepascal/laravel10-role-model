@@ -22,12 +22,21 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::prefix('admin')->name('admin.')->group(function () {
 Route::resources([
-'roles' => App\Http\Controllers\RoleController::class,
-'users' => App\Http\Controllers\UserController::class,
-'products' => App\Http\Controllers\ProductController::class,
-'options' => App\Http\Controllers\OptionController::class,
+'roles' => App\Http\Controllers\Admin\RoleController::class,
+'users' => App\Http\Controllers\Admin\UserController::class,
+'products' => App\Http\Controllers\Admin\ProductController::class,
+'options' => App\Http\Controllers\Admin\OptionController::class,
 ]);
+});
+
+// Route::resources([
+// 'roles' => App\Http\Controllers\RoleController::class,
+// 'users' => App\Http\Controllers\UserController::class,
+// 'products' => App\Http\Controllers\ProductController::class,
+// 'options' => App\Http\Controllers\OptionController::class,
+// ]);
 
 
 

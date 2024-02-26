@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use Illuminate\View\View;
+use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -29,7 +30,7 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        return view('users.index', [
+        return view('admin.users.index', [
             'users' => User::latest('id')->paginate(3)
         ]);
     }
@@ -39,7 +40,7 @@ class UserController extends Controller
      */
     public function create(): View
     {
-        return view('users.create', [
+        return view('admin.users.create', [
             'roles' => Role::pluck('name')->all()
         ]);
     }
@@ -55,7 +56,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->roles);
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.options.index')
                 ->withSuccess('New user is added successfully.');
     }
 
@@ -64,7 +65,7 @@ class UserController extends Controller
      */
     public function show(User $user): View
     {
-        return view('users.show', [
+        return view('admin.users.show', [
             'user' => $user
         ]);
     }
@@ -122,7 +123,7 @@ class UserController extends Controller
 
         $user->syncRoles([]);
         $user->delete();
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
                 ->withSuccess('User is deleted successfully.');
     }
 }

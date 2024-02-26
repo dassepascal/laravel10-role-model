@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\OptionFormRequest;
 use App\Models\Option;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\OptionFormRequest;
 
 class OptionController extends Controller
 {
@@ -28,7 +29,7 @@ class OptionController extends Controller
 
     public function index(): View
     {
-        return view('options.index',[
+        return view('admin.options.index',[
             'options' => Option::latest()->paginate(10)
         ]);
     }
@@ -38,7 +39,7 @@ class OptionController extends Controller
      */
     public function create(): View
     {
-        return view('options.create');
+        return view('admin.options.create');
     }
 
     /**
@@ -49,7 +50,7 @@ class OptionController extends Controller
 
         Option::create($request->validated());
 
-        return redirect()->route('options.index')
+        return redirect()->route('admin.options.index')
             ->with('success','Option created successfully.');
     }
 
@@ -58,7 +59,7 @@ class OptionController extends Controller
      */
     public function show(Option $option): View
     {
-        return view('options.show',compact('option'));
+        return view('admin.options.show',compact('option'));
     }
 
     /**
@@ -66,7 +67,7 @@ class OptionController extends Controller
      */
     public function edit(Option $option): View
     {
-        return view('options.edit',compact('option'));
+        return view('admin.options.edit',compact('option'));
     }
 
     /**
@@ -76,8 +77,18 @@ class OptionController extends Controller
     {
         $option->update($request->validated());
 
-        return redirect()->route('options.index')
+        return redirect()->route('admin.options.index')
             ->with('success','Option updated successfully');
     }
-    
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Option $option): RedirectResponse
+    {
+        $option->delete();
+
+        return redirect()->route('admin.options.index')
+            ->with('success','Option deleted successfully');
+    }
+
 }

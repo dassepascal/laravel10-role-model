@@ -5,7 +5,7 @@
     <div class="card-header">Option List</div>
     <div class="card-body">
         @can('create-product')
-            <a href="{{ route('options.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New Option</a>
+            <a href="{{ route('admin.options.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Add New Option</a>
         @endcan
         <table class="table table-striped table-bordered">
             <thead>
@@ -26,14 +26,14 @@
                     <td>{{ $option->name }}</td>
 
                     <td>
-                        <form action="{{ route('options.destroy', $option->id) }}" method="post">
+                        <form action="{{ route('admin.options.destroy', $option->id) }}" method="post">
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('options.show', $option->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
+                            <a href="{{ route('admin.options.show', $option->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Show</a>
 
                             @can('edit-product')
-                                <a href="{{ route('options.edit', $option->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit</a>
+                                <a href="{{ route('admin.options.edit', $option->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit</a>
                             @endcan
 
                             @can('delete-product')
