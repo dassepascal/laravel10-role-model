@@ -11,11 +11,11 @@
                     Add New Option
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('options.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('admin.options.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('options.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.options.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
 
 
