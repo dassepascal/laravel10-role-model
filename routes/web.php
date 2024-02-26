@@ -21,6 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('biens', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
+
 
 Route::prefix('admin')->name('admin.')->group(function () {
 Route::resources([
