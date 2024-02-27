@@ -1,4 +1,11 @@
-<div class="card">
+<div class="card"> @if ($product->image)
+    <div class="mb-3 row">
+        <label for="image" class="col-md-4 col-form-label text-md-end text-start">Image</label>
+        <div class="col-md-6">
+            <img src="{{ $product->imageUrl() }}  " alt="{{ $product->title }}" class="img-thumbnail">
+        </div>
+    </div>
+    @endif 
     <div class="card-body">
         <h5 class="card-title">
             <a href="{{  route('products.show', [ 'slug'=>$product->slug,'product'=>$product]) }}">{{ $product->title }}</a>

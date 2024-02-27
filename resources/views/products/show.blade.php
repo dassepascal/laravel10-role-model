@@ -6,43 +6,60 @@
 
 
 
-<div class="container mt-2">
+<div class="container mt-2  ">
+    <div class=" row">
+        <div class="">
+            @if ($product->image)
+            <div class="col-md-6 mt-5 bg-danger">
+                <label for="image" class="text-uppercase fw-bold">{{ $product->title }}</label>
 
-    <h1>{{ $product->title }}</h1>
-    <h2>{{ $product->rooms }} pièces - {{ $product->surface }} m² </h2>
+                    <img style="float: left; width: 500px; height: 300px; margin-right: 10px;"
+                        src="{{ $product->imageUrl() }}  " alt="{{ $product->title }}" class="img-thumbnail">
 
-    <div class="text-primary fw-bold" style="font-size: 4rem; ">
-        {{ $product->formatted_price }}
+            </div>
+            @endif
+            <div class=" col-md-6 mt-5  ">
+                <h2>{{ $product->rooms }} pièces </h2>
+                <h2>{{ $product->surface }} m²</h2>
+                <div class="text-primary fw-bold" style="font-size: 4rem; ">
+                    {{ $product->formatted_price }}
+                </div>
+            </div>
+
+        </div>
     </div>
-
 </div>
 
 <hr>
 <div class="container">
     <div class="mt-4">
         <h4>Intéressé par ce bien ?</h4>
-@if (session('success'))
-   @include('shared.flash')
+        @if (session('success'))
+        @include('shared.flash')
 
-@else
-<form action="{{ route('product.contact',$product) }}" method="post" class="vstack gap-3">
-    @csrf
-    <div class="row">
-        @include('shared.input', ['class'=>'col', 'name'=>'lastname', 'label'=>'Votre nom','value'=>'Dasse'])
-        @include('shared.input', ['class'=>'col', 'name'=>'firstname', 'label'=>'Votre prénom','value'=>'Mamadou'])
-    </div>
-    <div class="row">
-        @include('shared.input', ['class'=>'col', 'name'=>'phone', 'label'=>'Votre téléphone', 'value'=>'+33612345678'])
-        @include('shared.input', ['type'=> 'email','class'=>'col', 'name'=>'email', 'label'=>'Votre email', 'value'=>'mamadou@test.fr'])
-    </div>
-    @include('shared.input', ['type'=>'textarea','class'=>'col', 'name'=>'message', 'label'=>'Votre message','value'=>'Bonjour, je suis intéressé par votre bien '])
-    <div>
-        <button class="btn btn-primary">
-            Nous contacter
-        </button>
-    </div>
-</form>
-@endif
+        @else
+        <form action="{{ route('product.contact',$product) }}" method="post" class="vstack gap-3">
+            @csrf
+            <div class="row">
+                @include('shared.input', ['class'=>'col', 'name'=>'lastname', 'label'=>'Votre nom','value'=>'Dasse'])
+                @include('shared.input', ['class'=>'col', 'name'=>'firstname', 'label'=>'Votre
+                prénom','value'=>'Mamadou'])
+            </div>
+            <div class="row">
+                @include('shared.input', ['class'=>'col', 'name'=>'phone', 'label'=>'Votre téléphone',
+                'value'=>'+33612345678'])
+                @include('shared.input', ['type'=> 'email','class'=>'col', 'name'=>'email', 'label'=>'Votre email',
+                'value'=>'mamadou@test.fr'])
+            </div>
+            @include('shared.input', ['type'=>'textarea','class'=>'col', 'name'=>'message', 'label'=>'Votre
+            message','value'=>'Bonjour, je suis intéressé par votre bien '])
+            <div>
+                <button class="btn btn-primary">
+                    Nous contacter
+                </button>
+            </div>
+        </form>
+        @endif
     </div>
     <div class="mt-4">
         <p>Description : {!! nl2br($product->description) !!}</p>
@@ -69,8 +86,8 @@
                     <tr>
                         <td>Localisation</td>
                         <td>
-                            {{ $product->address }} <br/></td>
-                            <td>{{ $product->postal_code }} {{ $product->city }} </td>
+                            {{ $product->address }} <br /></td>
+                        <td>{{ $product->postal_code }} {{ $product->city }} </td>
                     </tr>
 
                 </table>
