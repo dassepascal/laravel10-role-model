@@ -32,7 +32,7 @@ class ProductController extends Controller
 
 
         return view('products.index',[
-            'products' => $query->paginate(2),
+            'products' => $query->paginate(3),
             'input'=> $request->validated()
         ]);
     }

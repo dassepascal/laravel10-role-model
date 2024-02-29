@@ -8,17 +8,18 @@
 
 <div class="container mt-2  ">
     <div class=" row">
-        <div class="">
+
             @if ($product->image)
-            <div class="col-md-6 mt-5 bg-danger">
-                <label for="image" class="text-uppercase fw-bold">{{ $product->title }}</label>
+            <div class="col-md-6 mt-5 ">
+                <label for="image" class="text-uppercase fw-bold"></label>
 
                     <img style="float: left; width: 500px; height: 300px; margin-right: 10px;"
                         src="{{ $product->imageUrl() }}  " alt="{{ $product->title }}" class="img-thumbnail">
 
             </div>
             @endif
-            <div class=" col-md-6 mt-5  ">
+            <div class=" col-md-6    ">
+                <h2 class="text-uppercase mt-5 ">{{ $product->title }}</h2>
                 <h2>{{ $product->rooms }} pièces </h2>
                 <h2>{{ $product->surface }} m²</h2>
                 <div class="text-primary fw-bold" style="font-size: 4rem; ">
@@ -26,7 +27,7 @@
                 </div>
             </div>
 
-        </div>
+
     </div>
 </div>
 
@@ -41,15 +42,15 @@
         <form action="{{ route('product.contact',$product) }}" method="post" class="vstack gap-3">
             @csrf
             <div class="row">
-                @include('shared.input', ['class'=>'col', 'name'=>'lastname', 'label'=>'Votre nom','value'=>'Dasse'])
+                @include('shared.input', ['class'=>'col', 'name'=>'lastname', 'label'=>'Votre nom','value'=>''])
                 @include('shared.input', ['class'=>'col', 'name'=>'firstname', 'label'=>'Votre
-                prénom','value'=>'Mamadou'])
+                prénom','value'=>''])
             </div>
             <div class="row">
                 @include('shared.input', ['class'=>'col', 'name'=>'phone', 'label'=>'Votre téléphone',
-                'value'=>'+33612345678'])
+                'value'=>''])
                 @include('shared.input', ['type'=> 'email','class'=>'col', 'name'=>'email', 'label'=>'Votre email',
-                'value'=>'mamadou@test.fr'])
+                'value'=>''])
             </div>
             @include('shared.input', ['type'=>'textarea','class'=>'col', 'name'=>'message', 'label'=>'Votre
             message','value'=>'Bonjour, je suis intéressé par votre bien '])
