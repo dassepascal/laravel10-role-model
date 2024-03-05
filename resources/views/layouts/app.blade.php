@@ -104,23 +104,22 @@
             <div class="container">
                 <div class="row justify-content-center mt-3">
                     <div class="col-md-12">
-
                         @if ($message = Session::get('success'))
                         <div class="alert alert-success text-center" role="alert">
                             {{ $message }}
                         </div>
                         @endif
-
-
                         @yield('content')
-
-
-
-
                     </div>
                 </div>
             </div>
         </main>
+
+<div class="container">
+    <hr>
+    @include('shared.footer')
+</div>
+
     </div>
     <script>
         new TomSelect('select[multiple]', {plugins: {remove_button: {title:'supprimer'}}})
