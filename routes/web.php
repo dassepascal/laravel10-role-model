@@ -18,7 +18,7 @@ $slugRegex = '[a-z0-9-]+';
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/sitemap', [App\Http\Controllers\HomeController::class, 'sitemap'])->name('sitemap');
+Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
 Route::get('/informations', [App\Http\Controllers\HomeController::class, 'informations'])->name('informations');
 Route::get('/politiques',[App\Http\Controllers\HomeController::class,'politiques'])->name('politiques');
 Route::get('/politiqueCookies',[App\Http\Controllers\HomeController::class,'politiqueCookies'])->name('politiqueCookies');
