@@ -25,7 +25,7 @@
       <div class="col-2">
         <h5>Confidentiabilité</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Plan du site</a></li>
+          <li class="nav-item mb-2"><a href="{{ route('planDuSite') }}" class="nav-link p-0 text-muted">Plan du site</a></li>
           <li class="nav-item mb-2"><a href="{{ route('informations')}}" class="nav-link p-0 text-muted">Informations légales</a></li>
           <li class="nav-item mb-2"><a href="{{ route('politiques') }}" class="nav-link p-0 text-muted">Politique de protection des données</a></li>
           <li class="nav-item mb-2"><a href="{{ route('politiqueCookies') }}" class="nav-link p-0 text-muted">Politique des cookies</a></li>

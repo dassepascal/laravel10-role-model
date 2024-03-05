@@ -29,9 +29,9 @@ class HomeController extends Controller
     }
 
 
-    public function sitemap()
+    public function planDuSite()
     {
-        return view('sitemap');
+        return view('planDuSite');
     }
 
     public function informations()
@@ -66,6 +66,7 @@ class HomeController extends Controller
     public function conseils(){
         return view('conseils');
     }
+
 
 
 }

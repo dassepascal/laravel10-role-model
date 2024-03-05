@@ -26,6 +26,7 @@ Route::get('/gestionCookies',[App\Http\Controllers\HomeController::class,'gestio
 Route::get('/notreAgence',[App\Http\Controllers\HomeController::class,'notreAgence'])->name('notreAgence');
 Route::get('/quiSommesNous',[App\Http\Controllers\HomeController::class,'quiSommesNous'])->name('quiSommesNous');
 Route::get('/actualites', [App\Http\Controllers\HomeController::class, 'actualites'])->name('actualites');
+Route::get('/planDuSite', [App\Http\Controllers\HomeController::class, 'planDuSite'])->name('planDuSite');
 //Route::get('/actualites/{slug}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show')->where('slug', $slugRegex);
 Route::get('/conseils', [App\Http\Controllers\HomeController::class, 'conseils'])->name('conseils');
 Route::get('/biens', [App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
