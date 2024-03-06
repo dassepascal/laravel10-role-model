@@ -11,10 +11,10 @@
     <h2>Nos derniers biens</h2>
      <div class="row">
         @foreach ($products as $product )
-        <div class="col">
+        <div class="col-md-3 mt-3">
             @include('products.card')
                     </div>
         @endforeach
-    </div> 
+    </div>
 </div>
 @endsection
