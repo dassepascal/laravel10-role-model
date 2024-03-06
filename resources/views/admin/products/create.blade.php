@@ -143,6 +143,26 @@
 
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <label for="dpe" class="col-md-4 col-form-label text-md-end text-start">dpe</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control @error('dpe') is-invalid @enderror" id="dpe"
+                                name="dpe" value="{{ old('dpe') }}">
+                            @if ($errors->has('dpe'))
+                            <span class="text-danger">{{ $errors->first('dpe') }}</span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="ges" class="col-md-4 col-form-label text-md-end text-start">ges</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control @error('ges') is-invalid @enderror" id="ges"
+                                name="ges" value="{{ old('ges') }}">
+                            @if ($errors->has('ges'))
+                            <span class="text-danger">{{ $errors->first('ges') }}</span>
+                            @endif
+                        </div>
+                    </div>
 
                     <div class="mb-3 row">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Add Product">

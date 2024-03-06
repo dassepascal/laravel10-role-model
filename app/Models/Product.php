@@ -25,7 +25,9 @@ class Product extends Model
         'address',
         'postal_code',
         'sold',
-        'image'
+        'image',
+        'dpe',
+        'ges',
     ];
 
     public function imageUrl(): string
@@ -43,5 +45,5 @@ class Product extends Model
         return str_replace('.', ',', $this->price).'€';
     }
 
-    
+
 }
