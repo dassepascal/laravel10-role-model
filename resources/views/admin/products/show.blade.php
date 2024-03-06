@@ -114,8 +114,8 @@
                             </div>
 
             </div>
-       
-            @include('shared.dpe')
+
+         
         </div>
     </div>
 </div>
