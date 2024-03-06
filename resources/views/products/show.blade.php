@@ -109,7 +109,7 @@
 
     <div class="col-4">
         <h2>DPE Value</h2>
-        @dump($product)
+    
         {{-- <span>{{ $product->dpe->dpeValue }}</span> --}}
     </div>
 
