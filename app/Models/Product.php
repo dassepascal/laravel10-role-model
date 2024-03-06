@@ -43,8 +43,5 @@ class Product extends Model
         return str_replace('.', ',', $this->price).'€';
     }
 
-    public function dpe()
-    {
-        return $this->hasOne(Dpe::class);
-    }
+    
 }
