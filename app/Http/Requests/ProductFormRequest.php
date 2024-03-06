@@ -33,9 +33,10 @@ class ProductFormRequest extends FormRequest
             'address' => 'required|string|max:250',
             'city' => 'required|string|max:250',
             'postal_code' => 'required|string|max:250',
-             'sold'=>'required|boolean',
-             'options' => ['array','exists:options,id','required'],
-
-        ];
+            'sold' => 'required|boolean',
+            'options' => ['array','exists:options,id','required'],
+            'dpe' => 'nullable|integer',
+            'ges' => 'nullable|integer',
+                ];
     }
 }

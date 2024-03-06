@@ -82,6 +82,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product): View
     {
+      
         return view('admin.products.edit', [
             'product' => $product,
             'options' => Option::pluck('name', 'id')

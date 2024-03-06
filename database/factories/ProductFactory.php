@@ -30,7 +30,8 @@ class ProductFactory extends Factory
             'address' => $this->faker->address,
             'postal_code' => $this->faker->postcode,
             'sold' => $this->faker->boolean,
-            // utiliser les images stocké  dans public  storage
+            'dpe' => $this->faker->numberBetween(1, 99),
+            'ges'=> $this->faker->numberBetween(1, 99),
 
 
             'image' => Storage::url('public/storage/productsImage/public/storage/productImage/7MNehNPlpfVEiywwWrD4vYWQFYhS88vowu9tvIIL.jpg'),

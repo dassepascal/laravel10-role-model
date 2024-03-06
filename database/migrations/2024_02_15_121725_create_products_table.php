@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      */
@@ -21,11 +20,13 @@ return new class extends Migration
             $table->integer('rooms');
             $table->integer('bedrooms');
             $table->integer('floor');
-             $table->integer('price');
+            $table->integer('price');
             $table->string('city');
             $table->string('address');
             $table->string('postal_code');
-           $table->boolean('sold')->default(false);
+            $table->boolean('sold')->default(false);
+            $table->integer('dpe')->nullable();
+            $table->integer('ges')->nullable();
             $table->timestamps();
         });
     }
