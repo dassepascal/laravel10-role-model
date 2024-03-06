@@ -15,6 +15,7 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "@vitejs/plugin-vue": "^5.0.4",
         "dpeges": "^1.0.17"
     }
 }

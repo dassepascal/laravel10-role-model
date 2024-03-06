@@ -105,16 +105,17 @@
                         {{-- dpe --}}
                         <div class="row">
                             <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>DPE:</strong></label>
-                            <div id="dpeValue" class="col-md-6" style="line-height: 35px;">
+                            <div  class="col-md-6 dpeValue" style="line-height: 35px;">
                                 {{ $product->dpe }}
                             </div>
                             <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>GES:</strong></label>
-                            <div id="gesValue" class="col-md-6" style="line-height: 35px;">
+                            <div  class="col-md-6 gesValue" style="line-height: 35px;">
                                 {{ $product->ges }}
                             </div>
 
             </div>
-            <div id="containerName"></div>
+       
+            @include('shared.dpe')
         </div>
     </div>
 </div>

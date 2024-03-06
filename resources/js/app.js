@@ -1,18 +1,11 @@
 import './bootstrap';
-import "dpeges/dist/style.css";
-import dpeGes from "dpeges";
+import { createApp } from 'vue/dist/vue.esm-bundler.js'; // Update the import statement for Vue
+import Test from './Components/Test.vue';
 
+const app = createApp(); // Create the app instance
+app.component('test', Test); // Register the component
+app.mount('#app');
 
-const dpeValue = document.getElementById('dpeValue').innerText;
-const gesValue = document.getElementById('gesValue').innerText;
-
-const stickerHeight = 375;
-dpeGes({
-  containerId: "containerName",
-  dpeValue: dpeValue,
-  gesValue: gesValue,
-  stickerHeight: stickerHeight,
-});
 
 
 

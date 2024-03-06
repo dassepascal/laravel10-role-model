@@ -90,6 +90,13 @@
                             {{ $product->address }} <br /></td>
                         <td>{{ $product->postal_code }} {{ $product->city }} </td>
                     </tr>
+                    <tr>
+                        <td>Dpe</td>
+                        <td class="depValue">{{ $product->dpe }}</td>
+                    </tr>
+                    <tr>
+                        <td>GES</td>
+                        <td class="gesValue">{{ $product->ges }}</td>
 
                 </table>
             </div>
@@ -107,10 +114,11 @@
 
 
 
-    <div class="col-4">
-        <h2>DPE Value</h2>
-        @dump($product)
-        {{-- <span>{{ $product->dpe->dpeValue }}</span> --}}
+    <div >
+
+<h2>dpe</h2>
+
+<div id="containerName"></div>
     </div>
 
 
