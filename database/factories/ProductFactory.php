@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -29,7 +30,10 @@ class ProductFactory extends Factory
             'address' => $this->faker->address,
             'postal_code' => $this->faker->postcode,
             'sold' => $this->faker->boolean,
-            'image' => $this->faker->imageUrl(640, 480, 'house', true)
+            // utiliser les images stocké  dans public  storage
+
+
+            'image' => Storage::url('public/storage/productsImage/public/storage/productImage/7MNehNPlpfVEiywwWrD4vYWQFYhS88vowu9tvIIL.jpg'),
         ];
     }
 }

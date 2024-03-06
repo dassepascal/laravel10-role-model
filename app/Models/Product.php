@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Dpe;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -40,5 +41,10 @@ class Product extends Model
     public function getFormattedPriceAttribute(): string
     {
         return str_replace('.', ',', $this->price).'€';
+    }
+
+    public function dpe()
+    {
+        return $this->hasOne(Dpe::class);
     }
 }
