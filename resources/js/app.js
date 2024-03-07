@@ -1,20 +1,22 @@
 import './bootstrap';
-import { createApp } from 'vue/dist/vue.esm-bundler.js'; // Update the import statement for Vue
-import Test from './Components/Test.vue';
-import Dpe from './Components/Dpe.vue';
+// import { createApp } from 'vue/dist/vue.esm-bundler.js'; // Update the import statement for Vue
+// import Test from './Components/Test.vue';
+// import Dpe from './Components/Dpe.vue';
 import "dpeges/dist/style.css";
 import dpeGes from "dpeges";
 
-const app = createApp(); // Create the app instance
-app.component('test', Test); // Register the component
-app.component('dpe', Dpe); // Register the component
-app.mount('#app');
+//const app = createApp(); // Create the app instance
+// app.component('test', Test); // Register the component
+// app.component('dpe', Dpe); // Register the component
+// app.mount('#app');
+//alert('Hello World');
+ const dpe = document.querySelector(".dpe");
+ console.log(dpe.innerText);
+ const ges = document.querySelector(".ges");
+    console.log(ges.innerText);
 
-const dpe = document.querySelector(".dpeValue");
-console.log(dpe);
-
-const dpeValue = 80;
-const gesValue = 98;
+const dpeValue = dpe.innerText;
+const gesValue = ges.innerText;
 const stickerHeight = 600;
 
 dpeGes({

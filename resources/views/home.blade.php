@@ -6,7 +6,7 @@
     <div class="container">
 
 <h1>Lorem ttoo o  ooo</h1>
-
+{{-- @include('shared.dpe') --}}
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi ratione laboriosam quis esse beatae, ducimus voluptate rem voluptas facere voluptates autem libero praesentium molestias ullam possimus at? Quia, ipsa molestiae.</p>
     </div>
 </div>

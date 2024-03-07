@@ -1,36 +1,24 @@
 @extends('layouts.app')
-
-
-
 @section('content')
-
-
-
 <div class="container mt-2  ">
     <div class=" row">
-
-            @if ($product->image)
-            <div class="col-md-6 mt-5 ">
-                <label for="image" class="text-uppercase fw-bold"></label>
-
-                    <img style="float: left; width: 500px; height: 300px; margin-right: 10px;"
-                        src="{{ $product->imageUrl() }}  " alt="{{ $product->title }}" class="img-thumbnail">
-
+        @if ($product->image)
+        <div class="col-md-6 mt-5 ">
+            <label for="image" class="text-uppercase fw-bold"></label>
+            <img style="float: left; width: 500px; height: 300px; margin-right: 10px;"
+                src="{{ $product->imageUrl() }}  " alt="{{ $product->title }}" class="img-thumbnail">
+        </div>
+        @endif
+        <div class=" col-md-6    ">
+            <h2 class="text-uppercase mt-5 ">{{ $product->title }}</h2>
+            <h2>{{ $product->rooms }} pièces </h2>
+            <h2>{{ $product->surface }} m²</h2>
+            <div class="text-primary fw-bold" style="font-size: 4rem; ">
+                {{ $product->formatted_price }}
             </div>
-            @endif
-            <div class=" col-md-6    ">
-                <h2 class="text-uppercase mt-5 ">{{ $product->title }}</h2>
-                <h2>{{ $product->rooms }} pièces </h2>
-                <h2>{{ $product->surface }} m²</h2>
-                <div class="text-primary fw-bold" style="font-size: 4rem; ">
-                    {{ $product->formatted_price }}
-                </div>
-            </div>
-
-
+        </div>
     </div>
 </div>
-
 <hr>
 <div class="container">
     <div class="mt-4">
@@ -65,7 +53,7 @@
     <div class="mt-4">
         <p>Description : {!! nl2br($product->description) !!}</p>
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <h2>Caractéristiques</h2>
                 <table class="table table-stripe">
                     <tr>
@@ -90,38 +78,31 @@
                             {{ $product->address }} <br /></td>
                         <td>{{ $product->postal_code }} {{ $product->city }} </td>
                     </tr>
-                    <tr>
-                        <td>Dpe</td>
-                        <td class="depValue">{{ $product->dpe }}</td>
-                    </tr>
+                    <div>
+                        <tr>
+                            <td>Dpe</td>
+                            <td class="dpe">{{ $product->dpe }}</td>
+                        </tr>
+                    </div>
                     <tr>
                         <td>GES</td>
-                        <td class="gesValue">{{ $product->ges }}</td>
-
+                        <td class="ges">{{ $product->ges }}</td>
                 </table>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <h2>Spécificités</h2>
                 <ul class="list-group">
                     @foreach ($product->options as $option )
                     <li class="list-group-item">{{ $option->name }}</li>
                     @endforeach
-
                 </ul>
             </div>
         </div>
     </div>
-
-
-
-    <div >
-
-<h2>dpe</h2>
-
-<div id="containerName"></div>
+    <div>
+        <h2>Dpe</h2>
+        <div id="containerName"></div>
     </div>
-
-
 </div>
 
 
