@@ -99,9 +99,12 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="mt-4 ">
         <h2>Dpe</h2>
-        <div id="containerName"></div>
+        <div class="col-md-6  ">
+            @include('shared.dpe')
+        </div>
+
     </div>
 </div>
 

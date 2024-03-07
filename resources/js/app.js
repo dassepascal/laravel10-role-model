@@ -17,7 +17,7 @@ import dpeGes from "dpeges";
 
 const dpeValue = dpe.innerText;
 const gesValue = ges.innerText;
-const stickerHeight = 600;
+const stickerHeight = 400;
 
 dpeGes({
     containerId: "containerName",

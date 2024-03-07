@@ -24,100 +24,114 @@
                     </div>
                 </div>
                 @endif
-
-
-                    <div class="row">
-                        <label for="title" class="col-md-4 col-form-label text-md-end text-start"><strong>Titre:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->title }}
-                        </div>
+                <div class="row bg-primary">
+                    <label for="title"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Titre:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->title }}
                     </div>
-
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Description:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->description }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Description:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->description }}
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Surface:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->surface }} m²
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Surface:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->surface }} m²
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Pièces:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->rooms }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Pièces:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->rooms }}
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Chambres</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->bedrooms }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Chambres</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->bedrooms }}
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Etage:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->floor }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Etage:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->floor }}
                     </div>
-
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Prix:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->price }} €
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Prix:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->price }} €
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Adresse:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->address }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Adresse:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->address }}
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Ville:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->city }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Ville:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->city }}
                     </div>
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Code postal:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            {{ $product->postal_code }}
-                        </div>
+                </div>
+                <div class="row">
+                    <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Code
+                            postal:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        {{ $product->postal_code }}
                     </div>
-                    {{-- options --}}
-                    <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Options:</strong></label>
-                        <div class="col-md-6" style="line-height: 35px;">
-                            @foreach ($product->options as $option)
-                            <span class="badge bg-secondary">{{ $option->name }}</span>
-                            @endforeach
-                        </div>
+                </div>
+                {{-- options --}}
+                <div class="row">
+                    <label for="description"
+                        class="col-md-4 col-form-label text-md-end text-start"><strong>Options:</strong></label>
+                    <div class="col-md-6" style="line-height: 35px;">
+                        @foreach ($product->options as $option)
+                        <span class="badge bg-secondary">{{ $option->name }}</span>
+                        @endforeach
+                    </div>
                     {{-- sold --}}
                     <div class="row">
-                        <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>Vendu:</strong></label>
+                        <label for="sold"
+                            class="col-md-4 col-form-label text-md-end text-start"><strong>Vendu:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $product->sold ? 'Oui' : 'Non' }}
                         </div>
                         {{-- dpe --}}
                         <div class="row">
-                            <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>DPE:</strong></label>
-                            <div  class="col-md-6 dpeValue" style="line-height: 35px;">
+                            <label for="dpe"
+                                class="col-md-4 col-form-label text-md-end text-start"><strong>DPE:</strong></label>
+                            <div class="col-md-6 dpe" style="line-height: 35px;">
                                 {{ $product->dpe }}
                             </div>
-                            <label for="description" class="col-md-4 col-form-label text-md-end text-start"><strong>GES:</strong></label>
-                            <div  class="col-md-6 gesValue" style="line-height: 35px;">
+                            <label for="ges"
+                                class="col-md-4 col-form-label text-md-end text-start"><strong>GES:</strong></label>
+                            <div class="col-md-6 ges" style="line-height: 35px;">
                                 {{ $product->ges }}
                             </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
 
             </div>
-
-         
-        </div>
-    </div>
-</div>
-
-@endsection
+            <div class="d-flex justify-content-center">
+                @include('shared.dpe')
+            </div>
+            @endsection
