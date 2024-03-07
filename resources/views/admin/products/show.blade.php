@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 @endif
-                <div class="row bg-primary">
+                <div class="row ">
                     <label for="title"
                         class="col-md-4 col-form-label text-md-end text-start"><strong>Titre:</strong></label>
                     <div class="col-md-6" style="line-height: 35px;">
