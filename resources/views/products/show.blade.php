@@ -105,15 +105,6 @@
             @include('shared.dpe')
         </div>
 
-<<<<<<< HEAD
-
-
-    <div class="col-4">
-        <h2>DPE Value</h2>
-    
-        {{-- <span>{{ $product->dpe->dpeValue }}</span> --}}
-=======
->>>>>>> test
     </div>
 </div>
 
